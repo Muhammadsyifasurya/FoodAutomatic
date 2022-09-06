@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "267780154760",
+    "firebase_url": "https://anaklanang-f0994-default-rtdb.firebaseio.com",
+    "project_id": "anaklanang-f0994",
+    "storage_bucket": "anaklanang-f0994.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267780154760:android:9d1aa5d04476b23627463d",
+        "android_client_info": {
+          "package_name": "id.mentoring.pakanotomatis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267780154760-cu89vjh3t6m4hslovkgevv0867vqs1si.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzN-EokPxnrlb_RRRggoF8IGgXeLu4zf8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267780154760-cu89vjh3t6m4hslovkgevv0867vqs1si.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
