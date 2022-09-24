@@ -49,14 +49,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mSwAuto.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                FirebaseDatabase database = FirebaseDatabase.getInstance();
+                DatabaseReference btnAuto = database.getReference("Kontrol/Auto");
                 if (mSwAuto.isChecked()==true){
                     mBtnAddPakan.setEnabled(true);
                     mBtnAddPakan.setOnClickListener(MainActivity.this);
                     mSwAuto.setText("Manual");
+                    btnAuto.setValue(true);
                 }
                 else if (mSwAuto.isChecked()==false){
                     mBtnAddPakan.setEnabled(false);
                     mSwAuto.setText("Otomatis");
+                    btnAuto.setValue(false);
                 }
             }
         });
@@ -69,10 +73,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 mPakanValue = Integer.parseInt(snapshot.child("Data/Pakan").getValue().toString());
-                if (mPakanValue <= 30){
+                if (mPakanValue > 20){
                     mTvNotify.setText("Pakan Habis");
                 }
-                else {
+                else if (mPakanValue >= 10 && mPakanValue <= 20){
+                    mTvNotify.setText("Pakan Setengah");
+                }
+                else if (mPakanValue < 10){
                     mTvNotify.setText("Pakan Penuh");
                 }
             }
